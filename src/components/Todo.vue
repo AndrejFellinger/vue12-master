@@ -61,9 +61,9 @@ export default {
             if(this.test == ''){
                 return(console.log('reloaded page or empty field'))
             }
-            this.list.push(this.test)
+            this.globalTasks.push({title: this.test})
             document.getElementById('notaskmsg').style = "display: none;"
-            this.$emit('tasknew', e.test)
+            console.log(this.globalTasks)
         
         },
         submitForm : function(event){

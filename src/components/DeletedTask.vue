@@ -40,7 +40,7 @@ export default {
 
         LoadData(){
             this.deleted = JSON.parse(localStorage.getItem("deleted"));
-            this.console.log(deleted)
+            console.log(deleted)
         },
     },
     

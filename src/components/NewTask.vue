@@ -10,6 +10,17 @@
 
 </li>
 
+<!-- <li v-for="(kokos1, index) in this.globalTasks">
+        
+    {{ kokos1.title }}
+
+    <button class="deletebtn" @click="deleteTodo(index)">
+        <ion-icon name="trash"></ion-icon>
+    </button>
+
+</li> -->
+
+
 </template>
 
 
@@ -44,7 +55,7 @@ export default {
 
         (async () => {
             await getData();
-            console.log(dataGlobal);
+            // console.log(dataGlobal);
         })();
 
         if (dataGlobal == null){
@@ -58,9 +69,14 @@ export default {
             this.deleted.push(this.dataGlobal.splice(index, 1)[0])
             localStorage.setItem("deleted", JSON.stringify(this.deleted));
 
+            this.updateTasks()
             // Sem ide Update Deleted Function 
             
         },
+
+        updateTasks(){
+        this.dataGlobal.push({title: this.globalTasks})
+        }
         
     },
 
