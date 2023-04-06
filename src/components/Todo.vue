@@ -50,7 +50,7 @@ export default {
     },
 
     mounted() {
-        
+
     },
 
     methods: {
@@ -64,9 +64,8 @@ export default {
             this.globalTasks.push({title: this.test})
             document.getElementById('notaskmsg').style = "display: none;"
             console.log(this.globalTasks)
-        
         },
-        submitForm : function(event){
+        submitForm(event){
             event.preventDefault(),
             event.target.reset()
         },

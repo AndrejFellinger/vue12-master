@@ -1,10 +1,17 @@
 <template>
 
-    <li @mousemove="LoadData()" @load-data="LoadData" v-for="(kokos, index) in deleted">
+<li v-for="(kokos, index) in deleted">
         
     {{ kokos.title }}
 
 </li>
+
+<li v-for="(kokos1, index) in deleted2">
+        
+    {{ kokos1.title }}
+
+</li>
+
 
 <p>
     <button @click="LoadData()">Update Data</button>
@@ -22,6 +29,7 @@ export default {
     data() {
         return {
             deleted: [],
+            deleted2: [],
             deletedlist: '',
             dataGlobal: [],
         }
@@ -40,7 +48,7 @@ export default {
 
         LoadData(){
             this.deleted = JSON.parse(localStorage.getItem("deleted"));
-            console.log(deleted)
+            this.deleted2 = JSON.parse(localStorage.getItem("deleted2"));
         },
     },
     

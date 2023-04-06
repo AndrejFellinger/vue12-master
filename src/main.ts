@@ -6,7 +6,7 @@ import './assets/main.css'
 
 const app = createApp(App)
 
-app.config.globalProperties.globalTasks =  []
+app.config.globalProperties.globalTasks = []
 
 app.use(router)
 
